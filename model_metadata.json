@@ -1,0 +1,155 @@
+{
+  "champion_model": "Soft Voting",
+  "training_rows": 1669,
+  "test_rows": 418,
+  "unique_records": 2087,
+  "original_records": 2111,
+  "duplicates_removed": 24,
+  "features": [
+    "Gender",
+    "Age",
+    "Height",
+    "Weight",
+    "family_history_with_overweight",
+    "FAVC",
+    "FCVC",
+    "NCP",
+    "CAEC",
+    "SMOKE",
+    "CH2O",
+    "SCC",
+    "FAF",
+    "TUE",
+    "CALC",
+    "MTRANS"
+  ],
+  "numeric_features": [
+    "Age",
+    "Height",
+    "Weight",
+    "FCVC",
+    "NCP",
+    "CH2O",
+    "FAF",
+    "TUE"
+  ],
+  "categorical_features": [
+    "Gender",
+    "family_history_with_overweight",
+    "FAVC",
+    "CAEC",
+    "SMOKE",
+    "SCC",
+    "CALC",
+    "MTRANS"
+  ],
+  "classes": [
+    "Insufficient_Weight",
+    "Normal_Weight",
+    "Obesity_Type_I",
+    "Obesity_Type_II",
+    "Obesity_Type_III",
+    "Overweight_Level_I",
+    "Overweight_Level_II"
+  ],
+  "metrics": {
+    "Decision Tree": {
+      "Accuracy": 0.976077,
+      "Balanced Accuracy": 0.975342,
+      "Precision (Macro)": 0.976715,
+      "Recall (Macro)": 0.975342,
+      "F1 (Macro)": 0.975749,
+      "F1 (Weighted)": 0.975956,
+      "ROC-AUC (Macro OVR)": 0.985669,
+      "Log Loss": 0.862288,
+      "CV F1 Mean": 0.928542,
+      "CV F1 Std": 0.01008,
+      "Fit Time (s)": 0.016079,
+      "Predict Time (s)": 0.002968
+    },
+    "Soft Voting": {
+      "Accuracy": 0.971292,
+      "Balanced Accuracy": 0.970421,
+      "Precision (Macro)": 0.970051,
+      "Recall (Macro)": 0.970421,
+      "F1 (Macro)": 0.970195,
+      "F1 (Weighted)": 0.971272,
+      "ROC-AUC (Macro OVR)": 0.999346,
+      "Log Loss": 0.178547,
+      "CV F1 Mean": 0.960905,
+      "CV F1 Std": 0.008258,
+      "Fit Time (s)": 1.434388,
+      "Predict Time (s)": 0.19158
+    },
+    "Random Forest": {
+      "Accuracy": 0.961722,
+      "Balanced Accuracy": 0.961046,
+      "Precision (Macro)": 0.96101,
+      "Recall (Macro)": 0.961046,
+      "F1 (Macro)": 0.960782,
+      "F1 (Weighted)": 0.96212,
+      "ROC-AUC (Macro OVR)": 0.9986,
+      "Log Loss": 0.194168,
+      "CV F1 Mean": 0.943861,
+      "CV F1 Std": 0.013747,
+      "Fit Time (s)": 1.20669,
+      "Predict Time (s)": 0.151312
+    },
+    "Logistic Regression": {
+      "Accuracy": 0.949761,
+      "Balanced Accuracy": 0.949385,
+      "Precision (Macro)": 0.948775,
+      "Recall (Macro)": 0.949385,
+      "F1 (Macro)": 0.948728,
+      "F1 (Weighted)": 0.949531,
+      "ROC-AUC (Macro OVR)": 0.996433,
+      "Log Loss": 0.192194,
+      "CV F1 Mean": 0.939581,
+      "CV F1 Std": 0.016307,
+      "Fit Time (s)": 0.119911,
+      "Predict Time (s)": 0.005282
+    },
+    "KNN": {
+      "Accuracy": 0.863636,
+      "Balanced Accuracy": 0.856963,
+      "Precision (Macro)": 0.852905,
+      "Recall (Macro)": 0.856963,
+      "F1 (Macro)": 0.852832,
+      "F1 (Weighted)": 0.858501,
+      "ROC-AUC (Macro OVR)": 0.974345,
+      "Log Loss": 1.267925,
+      "CV F1 Mean": 0.866169,
+      "CV F1 Std": 0.022099,
+      "Fit Time (s)": 0.008714,
+      "Predict Time (s)": 0.009938
+    }
+  },
+  "best_parameters": {
+    "Logistic Regression": {
+      "model__class_weight": "balanced",
+      "model__C": 20
+    },
+    "KNN": {
+      "model__weights": "distance",
+      "model__p": 1,
+      "model__n_neighbors": 5,
+      "model__leaf_size": 50
+    },
+    "Decision Tree": {
+      "model__min_samples_split": 2,
+      "model__min_samples_leaf": 1,
+      "model__max_depth": 20,
+      "model__criterion": "entropy",
+      "model__class_weight": "balanced"
+    },
+    "Random Forest": {
+      "model__n_estimators": 600,
+      "model__min_samples_split": 2,
+      "model__min_samples_leaf": 2,
+      "model__max_features": 0.5,
+      "model__max_depth": null,
+      "model__class_weight": "balanced"
+    }
+  },
+  "notes": "Model trained on 24 exact duplicates removed; 80/20 stratified split, random_state=42."
+}
